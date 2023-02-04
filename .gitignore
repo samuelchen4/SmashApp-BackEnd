@@ -1,0 +1,4 @@
+# node_modules
+/node_modules
+
+# setup ignore for database and setup .env file later
