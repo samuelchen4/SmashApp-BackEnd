@@ -8,7 +8,7 @@ const addNewUser = async (fn, ln, phone, email, dob) => {
     [fn, ln, phone, email, dob]
   );
   await mysql.end();
-  return { fn, ln, phone, email, dob };
+  return { fn, ln, phone, email, dob, userId: newUser.insertId };
 };
 
 const getUserLessons = async () => {

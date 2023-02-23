@@ -119,48 +119,6 @@ const changePayStatus = async (req, res) => {
       }
     }
 
-    // await Promise.allSettled(
-    //   overdueLessonArr.map(async (lesson, index) => {
-    //     const purchaseId = lesson.purchase_id;
-    //     const paidStatus = await changePaidStatus(
-    //       purchaseId,
-    //       receptInitials,
-    //       payMethod
-    //     );
-    //     purchaseIdArr.push(purchaseId);
-    //     payStatusResponses.push(paidStatus);
-    //     if (creditAmount) {
-    //       if (creditAmount > lesson.lessonPrice) {
-    //         await postCreditChange(-lesson.lessonPrice, purchaseId);
-    //         creditAmount -= lesson.lessonPrice;
-    //       } else {
-    //         await postCreditChange(-creditAmount, purchaseId);
-    //         creditAmount = 0;
-    //       }
-    //     }
-    //   })
-    // );
-
-    // overdueLessonArr.map(async (lesson) => {
-    //   const purchaseId = lesson.purchase_id;
-    //   const paidStatus = await changePaidStatus(
-    //     purchaseId,
-    //     receptInitials,
-    //     payMethod
-    //   );
-    //   purchaseIdArr.push(purchaseId);
-    //   payStatusResponses.push(paidStatus);
-    //   if (creditAmount) {
-    //     if (creditAmount > lesson.lessonPrice) {
-    //       await postCreditChange(-lesson.lessonPrice, purchaseId);
-    //       creditAmount -= lesson.lessonPrice;
-    //     } else {
-    //       await postCreditChange(-creditAmount, purchaseId);
-    //       creditAmount = 0;
-    //     }
-    //   }
-    // });
-
     return res.status(200).json({ payStatusResponses, postCreditsUsed });
   } catch (err) {
     console.log(`error in changePayStatus method. the error is: ${err}`);

@@ -1,0 +1,21 @@
+service: SmashApp-API
+provider:
+  name: aws
+  runtime: nodejs14.x
+  stage: dev
+  region: us-west-2
+# plugins:
+#   - serverless-plugin-common-excludes # this should go before serverless-plugin-include-dependencies
+#   - serverless-plugin-include-dependencies
+functions:
+  api:
+    handler: handler.handler
+    events:
+      - http:
+          path: /
+          method: ANY
+          cors: true
+      - http:
+          path: /{proxy+}
+          method: ANY
+          cors: true

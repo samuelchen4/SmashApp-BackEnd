@@ -1,9 +1,9 @@
 const dbConfig = {
-  database: 'smashcityDb',
-  host: 'aws-simplified.cvlzcxvilm37.us-west-2.rds.amazonaws.com',
-  port: '3306',
-  user: 'admin',
-  password: 'smashcity888',
+  database: process.env.DATABASE_NAME,
+  host: process.env.DATABASE_HOST,
+  port: process.env.DATABASE_PORT,
+  user: process.env.DATABASE_USER,
+  password: process.env.DATABASE_PASSWORD,
 };
 
 module.exports = dbConfig;

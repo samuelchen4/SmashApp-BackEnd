@@ -19,11 +19,11 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(express.json());
 
-app.use('/users', usersRoute);
-app.use('/agenda', agendaRoute);
-app.use('/paytracker', paytrackerRoute);
-app.use('/user', userPageRoute);
-app.use('/lessons', lessonsRoute);
-app.use('/navbar', navbarRoute);
+app.use('/api/users', usersRoute);
+app.use('/api/agenda', agendaRoute);
+app.use('/api/paytracker', paytrackerRoute);
+app.use('/api/user', userPageRoute);
+app.use('/api/lessons', lessonsRoute);
+app.use('/api/navbar', navbarRoute);
 
 module.exports.handler = serverless(app);
